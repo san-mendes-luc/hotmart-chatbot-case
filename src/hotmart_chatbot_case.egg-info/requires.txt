@@ -1,0 +1,14 @@
+langchain-huggingface>=0.3.0
+langgraph>=0.4.8
+langgraph-api>=0.2.56
+langgraph-cli[inmem]>=0.3.3
+langgraph-sdk>=0.1.70
+pymilvus>=2.5.11
+transformers>=4.52.4
+langchain-openai>=0.3.24
+langchain-community>=0.3.25
+torch>=2.7.1
+accelerate>=1.8.0
+sentence-transformers>=4.1.0
+langchain-milvus>=0.2.0
+fastapi[standard]>=0.115.13

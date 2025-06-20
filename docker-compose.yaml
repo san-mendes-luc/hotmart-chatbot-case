@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  milvus:
+    image: milvusdb/milvus:latest
+    container_name: milvus
+    command: ["milvus", "run", "standalone"]
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    environment:
+      ETCD_USE_EMBED: "true"
+      COMMON_STORAGETYPE: "local"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - milvus_data:/var/lib/milvus
+
+  langgraph-redis:
+    image: redis:6
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 1s
+      retries: 5
+
+  langgraph-postgres:
+    image: postgres:16
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - langgraph-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      start_period: 10s
+      timeout: 1s
+      retries: 5
+      interval: 5s
+
+  langgraph-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8123:8000"
+    depends_on:
+      langgraph-redis:
+        condition: service_healthy
+      langgraph-postgres:
+        condition: service_healthy
+      milvus:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      REDIS_URI: redis://langgraph-redis:6379
+      MILVUS_URI: http://milvus:19530
+      #POSTGRES_URI: postgres://postgres:postgres@langgraph-postgres:5432/postgres?sslmode=disable
+
+volumes:
+  milvus_data:
+    driver: local
+  langgraph-data:
+    driver: local

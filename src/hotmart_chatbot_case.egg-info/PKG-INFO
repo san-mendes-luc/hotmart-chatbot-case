@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: hotmart-chatbot-case
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: <4.0,>=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: langchain-huggingface>=0.3.0
+Requires-Dist: langgraph>=0.4.8
+Requires-Dist: langgraph-api>=0.2.56
+Requires-Dist: langgraph-cli[inmem]>=0.3.3
+Requires-Dist: langgraph-sdk>=0.1.70
+Requires-Dist: pymilvus>=2.5.11
+Requires-Dist: transformers>=4.52.4
+Requires-Dist: langchain-openai>=0.3.24
+Requires-Dist: langchain-community>=0.3.25
+Requires-Dist: torch>=2.7.1
+Requires-Dist: accelerate>=1.8.0
+Requires-Dist: sentence-transformers>=4.1.0
+Requires-Dist: langchain-milvus>=0.2.0
+Requires-Dist: fastapi[standard]>=0.115.13
+Dynamic: license-file
