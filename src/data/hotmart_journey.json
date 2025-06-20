@@ -1,0 +1,89 @@
+{
+    "programa": "Hotmart Journey",
+    "descricao_geral": "Programa de reconhecimento para Produtores, Afiliados e Coprodutores da Hotmart. Dividido em duas trilhas: Stars (performance anual) e Legacy (faturamento acumulado).",
+    "trilhas": {
+      "stars": {
+        "descricao": "Trilha de performance com base nos resultados dos últimos 12 meses.",
+        "recompensas": ["Encontros exclusivos", "Experiências memoráveis"]
+      },
+      "legacy": {
+        "descricao": "Trilha baseada no faturamento líquido total acumulado.",
+        "capitulos": {
+          "earth": {
+            "nome": "Earth Chapter",
+            "recompensas_gerais": ["Badges", "Amuleto", "Quadro"],
+            "marcos": [
+              {
+                "nome": "Hotmart Project",
+                "faturamento": "Cadastro de produto",
+                "recompensas": ["Badge"]
+              },
+              {
+                "nome": "Hotmart Blueprint",
+                "faturamento": "R$ 10.000",
+                "recompensas": ["Badge", "Amuleto exclusivo"]
+              },
+              {
+                "nome": "Hotmart Build",
+                "faturamento": "R$ 100.000",
+                "recompensas": ["Badge", "Quadro físico"]
+              },
+              {
+                "nome": "Hotmart Spaceship",
+                "faturamento": "R$ 250.000",
+                "recompensas": ["Badge"]
+              },
+              {
+                "nome": "Hotmart Mission",
+                "faturamento": "R$ 500.000",
+                "recompensas": ["Badge"]
+              }
+            ]
+          },
+          "milky_way": {
+            "nome": "Milky Way Chapter",
+            "recompensas_gerais": ["Black Boxes", "Pulseiras"],
+            "marcos": [
+              {
+                "nome": "BlackOne",
+                "faturamento": "R$ 1.000.000",
+                "recompensas": ["Black Box", "Pulseira"]
+              },
+              {
+                "nome": "BlackMoon",
+                "faturamento": "R$ 5.000.000",
+                "recompensas": ["Black Box", "Pulseira"]
+              },
+              {
+                "nome": "BlackVenus",
+                "faturamento": "R$ 10.000.000",
+                "recompensas": ["Black Box", "Pulseira"]
+              },
+              {
+                "nome": "BlackSun",
+                "faturamento": "R$ 25.000.000",
+                "recompensas": ["Black Box", "Pulseira"]
+              },
+              {
+                "nome": "BlackSirius",
+                "faturamento": "R$ 100.000.000",
+                "recompensas": ["Black Box", "Pulseira"]
+              }
+            ]
+          },
+          "cosmos": {
+            "nome": "Cosmos Chapter",
+            "recompensas_gerais": ["Space Helmet Cosmos I"],
+            "marcos": [
+              {
+                "nome": "Cosmos I",
+                "faturamento": "R$ 250.000.000",
+                "recompensas": ["Space Helmet Cosmos I"]
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+  
